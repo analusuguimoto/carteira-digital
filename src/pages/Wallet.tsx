@@ -1,14 +1,7 @@
-import { useSelector } from 'react-redux';
-
-type RootState = {
-  user: any;
-};
+import Header from '../components/Header';
 
 function Wallet() {
-  const usuario = useSelector((state: RootState) => state);
-  console.log(usuario);
-  console.log(usuario.email);
-  return <div>TrybeWallet</div>;
+  return <Header />;
 }
 
 export default Wallet;
