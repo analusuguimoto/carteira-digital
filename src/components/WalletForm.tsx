@@ -10,7 +10,7 @@ function WalletForm() {
   const [description, setDescription] = useState('');
   const [curr, setCurr] = useState('USD');
   const [paymethod, setPayMethod] = useState('Dinheiro');
-  const [tag, setTag] = useState('Alimentação')
+  const [tag, setTag] = useState('Alimentação');
 
   // console.log(wallet);
 

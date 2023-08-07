@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { Store } from 'redux';
 import './index.css';
 import App from './App';
-import userInfoStore from './redux/index';
 import store from './redux/index';
 
 ReactDOM
