@@ -6,7 +6,14 @@ type RootState = {
 
 function Header() {
   const userEmail = useSelector((user: RootState) => user);
-  const totalOfExpenses = 0;
+  const { expenses } = useSelector((state: any) => state.wallet);
+
+  const totalValue = expenses.reduce((accumulator: any, current: any) => {
+    console.log(current);
+    return accumulator
+    + Number(current.value)
+    * Number(current.exchangeRates[current.currency].ask);
+  }, 0);
 
   return (
     <header>
@@ -14,7 +21,7 @@ function Header() {
         { userEmail.user.email }
       </p>
       <p data-testid="total-field">
-        {totalOfExpenses}
+        {totalValue.toFixed(2)}
       </p>
       <p data-testid="header-currency-field">
         BRL
