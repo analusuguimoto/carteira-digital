@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 import { renderWithRouterAndRedux } from './renderWith';
 import mockData from './mockData';
-import { vi } from 'vitest';
 import App from '../../App';
 
 describe('Verifica a pagina inicial', () => {
@@ -11,7 +11,7 @@ describe('Verifica a pagina inicial', () => {
       json: async () => (mockData),
     });
   });
-  
+
   test('Verifica os itens da pag inicial', () => {
     renderWithRouterAndRedux(<App />);
     expect(screen.getByText(/trybewallet/i)).toBeInTheDocument();
