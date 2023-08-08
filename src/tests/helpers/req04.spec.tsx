@@ -5,14 +5,14 @@ import App from '../../App';
 
 describe('Verifica a pagina inicial', () => {
   test('Verifica os itens da pag inicial', () => {
-    renderWithRouterAndRedux(<App />)
-    expect(screen.getByText(/trybewallet/i)).toBeInTheDocument;
-    expect(screen.getByTestId('email-input')).toBeInTheDocument;
-    expect(screen.getByPlaceholderText(/Digite seu email/i)).toBeInTheDocument;
-    expect(screen.getByPlaceholderText(/digite sua senha/i)).toBeInTheDocument;
-    expect(screen.getByTestId('password-input')).toBeInTheDocument;
-    expect(screen.getByRole('button', { name: 'Entrar' })).toBeInTheDocument;
-    expect(screen.getByRole('button', { name: 'Entrar' })).toBeDisabled;
+    renderWithRouterAndRedux(<App />);
+    expect(screen.getByText(/trybewallet/i)).toBeInTheDocument();
+    expect(screen.getByTestId('email-input')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Digite seu email/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/digite sua senha/i)).toBeInTheDocument();
+    expect(screen.getByTestId('password-input')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Entrar' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Entrar' })).toBeDisabled();
   });
 
   test(' Verifica o preenchimentos dos Inputs válidos e a redenrização do Botão', async () => {
@@ -20,7 +20,7 @@ describe('Verifica a pagina inicial', () => {
     const loginButton = screen.getByRole('button', { name: 'Entrar' });
     const email = screen.getByPlaceholderText(/Digite seu email/i);
     const password = screen.getByPlaceholderText(/digite sua senha/i);
-    
+
     expect(loginButton).toBeInTheDocument();
     expect(loginButton).toBeDisabled();
 
@@ -33,4 +33,3 @@ describe('Verifica a pagina inicial', () => {
     expect(screen.getByRole('columnheader', { name: /descrição/i }));
   });
 });
-
